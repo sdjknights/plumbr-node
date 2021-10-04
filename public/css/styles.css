@@ -1,0 +1,450 @@
+/* Defaults */
+:root {
+    /* --x-light: #FEFCF5;
+    --light: #FDE49C;
+    --med: #FFB740;
+    --dark: #DF711B;
+    --x-dark: #28180b;
+    --contra: #4fd663;
+    --contra-darker: #45bf6c; */
+    --x-light: #fff5f5;
+    --light: #fcaaaa;
+    --med: #51C2D5;
+    --dark: #EC4646;
+    --x-dark: #663F3F;
+    --contra: #51C2D5;
+    --contra-darker: #245b64;
+    --heading-font: 'Fira Sans', sans-serif;
+    --subtitle-font: 'Khula', sans-serif;
+    --body-font: 'Orienta', sans-serif;
+    --tool-x: url(../img/tool-x-lightblue3.png);
+    /* Visit https://codepen.io/sosuke/pen/Pjoqqp to get mask */
+    --filter-dark: invert(100%) sepia(30%) saturate(801%) hue-rotate(301deg) brightness(104%) contrast(99%);
+    --filter-light: invert(83%) sepia(2%) saturate(817%) hue-rotate(314deg) brightness(112%) contrast(109%);
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--x-light);
+}
+
+h1 {
+    font-family: var(--heading-font);
+}
+
+h2,
+h3,
+h4,
+h5 h6 {
+    font-family: var(--subtitle-font);
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 4rem;
+    ;
+}
+
+a,
+a:hover {
+    color: var(--x-light);
+}
+
+button a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    padding: 20px 0;
+}
+
+.dark-bg {
+    color: var(--x-light);
+    background-color: var(--dark);
+}
+
+.dark-bg a {
+    color: var(--x-light);
+}
+
+.med-bg {
+    color: var(--x-light);
+    background-color: var(--med);
+}
+
+.light-bg {
+    color: var(--dark);
+    background-color: var(--x-light);
+}
+
+/* Body */
+section {
+    padding: 20px 0;
+}
+
+/* Navbar */
+#nav {
+    padding: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--x-light);
+}
+
+.z-index-5000 {
+    position: relative;
+    z-index: 5000;
+}
+
+
+/* Back to top */
+.back-to-top {
+    background-color: var(--x-light);
+    border: 1px solid var(--dark);
+    border-radius: 3px;
+    border-bottom: none;
+    color: var(--dark);
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    z-index: 1000;
+    display: none;
+    padding: 5px;
+}
+
+.back-to-top a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+/* Hero */
+
+#hero .container-fluid {
+    height: calc(100vh - 177px);
+}
+
+#hero .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.carousel-item img {
+    margin: auto auto;
+    height: 400px;
+    max-width: 600px;
+    border: 2px solid var(--light);
+    border-radius: 4px;
+}
+
+.carousel-item h2 {
+    display: inline-block;
+    color: var(--x-light);
+    padding: 20px 5px;
+    background: linear-gradient(to right, #ffffff00 0%, #28180b80 10%, #28180b80 90%, #ffffff00 100%);
+}
+
+@media only screen and (max-width: 800px) {
+    .carousel-item h2 {
+        font-size: 1.5em;
+    }
+}
+
+.btn-success {
+    background-color: var(--contra-darker);
+    border-color: #000;
+}
+
+.btn-success:hover {
+    background-color: var(--contra);
+}
+
+/* Services */
+#services h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#services h2,
+#services h5 {
+    color: var(--x-light);
+}
+
+#services h5 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#services li {
+    color: var(--x-light);
+    font-size: 1.2rem;
+}
+
+#services ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+#services .row {
+    justify-content: space-between;
+}
+
+.service-card {
+    max-width: 400px;
+    text-align: center;
+    border-width: 3px;
+    border-style: solid;
+}
+
+/* Last card centered when on a row by itself */
+@media only screen and (max-width: 1399px) {
+    .service-card:nth-child(3) {
+        margin: 0 auto;
+    }
+}
+
+/* More padding for last one when stacked */
+@media only screen and (max-width: 991px) {
+    .service-card:nth-child(3) {
+        margin: 20px auto;
+    }
+}
+
+/* All centered when stacked. No borders */
+@media only screen and (max-width: 991px) {
+    .service-card {
+        margin: 0 auto;
+        border: none;
+    }
+}
+
+/* Borders down the sides when in a row */
+@media only screen and (min-width: 992px) {
+    .service-card {
+        margin: 0 auto;
+        border-image:
+            linear-gradient(to bottom,
+                var(--x-light),
+                rgba(0, 0, 0, 0)) 1 100%;
+    }
+}
+
+/* Borders above and below middle one when stacked */
+@media only screen and (max-width: 991px) {
+    .service-card:nth-child(2) {
+        margin: 0 auto;
+        border: 3px solid var(--x-light);
+        border-left: none;
+        border-right: none;
+        padding-top: 20px;
+    }
+}
+
+#services img {
+    width: 100px;
+    margin: 0 auto 20px;
+    filter: var(--filter-light)
+}
+
+.scale-in-center {
+    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Why Us */
+#why .col-12 {
+    text-align: center;
+}
+
+#why .carousel p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    width: 100%;
+}
+
+#why .carousel .card {
+    padding: 0 20px;
+}
+
+#why h5 {
+    color: var(--dark);
+    font-weight: 900;
+}
+
+/* For mobile, no side margin for carousel */
+@media only screen and (max-width: 425px) {
+    #why .carousel {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+/* Contact */
+#contact {
+    font-weight: 300;
+    color: var(--x-dark);
+    background-color: var(--med);
+    background-image: var(--tool-x);
+    background-attachment: fixed;
+    background-size: 300px;
+}
+
+#contact hr {
+    color: var(--x-dark);
+    background-color: var(--x-dark);
+    height: 3px;
+}
+
+@media only screen and (max-width: 992px) {
+    #contact {
+        text-align: center;
+        padding-bottom: 0;
+    }
+
+    #contact form {
+        margin-top: 20px;
+    }
+
+    #contact fieldset {
+        display: inline-block;
+    }
+
+    #contact select {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+#contact a,
+#contact a:hover {
+    color: var(--x-dark);
+}
+
+.contact-category {
+    background-color: var(--light);
+    border-radius: 15px;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.contact-category a {
+    text-decoration: none;
+}
+
+/* #contact .map {
+    border: 1px var(--x-dark) solid;
+    border-radius: 3px;
+    display: inline-flex;
+    max-width: 100%;
+} */
+
+#contact iframe {
+    border: 1px var(--dark) solid;
+    border-radius: 3px;
+    display: inline-flex;
+    max-width: 100%;
+    height: 250px;
+}
+
+#contact input,
+#contact select,
+#contact textarea {
+    display: block;
+    margin: 5px 0;
+}
+
+#contact form input,
+#contact form select,
+#contact form textarea {
+    margin-bottom: 10px;
+    background-color: var(--x-light);
+    border-radius: 3px;
+}
+
+#contact form input[type="submit"] {
+    background-color: var(--dark);
+}
+
+#contact textarea {
+    width: 100%;
+}
+
+.contact-form {
+    display: flexbox;
+}
+
+.address {
+    display: inline-flex;
+    position: relative;
+    bottom: 18px;
+}
+
+@media only screen and (max-width: 990px) {
+    .contact-form {
+        display: block;
+    }
+}
+
+/* Affiliations */
+
+#affiliations img {
+    height: 100px;
+    width: auto;
+}
+
+@media only screen and (max-width:992px) {
+    #affiliations img:first-child {
+        margin-bottom: 80px;
+    }
+}
+
+@media only screen and (max-width:467px) {
+    #affiliations img:nth-child(3) {
+        margin-bottom: 80px;
+    }
+}
+
+/* Footer */
+footer ul {
+    list-style-type: none;
+}
+
+footer ul a {
+    text-decoration: none;
+}
+
+.mt-1rem {
+    margin-top: 1rem;
+}
+
+.copy {
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+}
+
+/* Privacy Policy */

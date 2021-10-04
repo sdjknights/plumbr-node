@@ -1,0 +1,223 @@
+<%- include("partials/header"); -%>
+
+<section id="hero">
+    <div class="container-fluid light-bg">
+        <div class="container">
+            <div id="carouselHero" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <% heroCarousel.forEach(function(slide){ %>
+                    <div class="carousel-item <%= slide.active%>">
+                        <img src="img/<%= slide.img%>.jpg" class="d-block" alt="<%= slide.alt%>">
+                        <div class="carousel-caption d-block">
+                            <h2><%= slide.header%></h2>
+                            <p><button type="button" class="btn btn-success btn-lg"><a href="#contact">Contact
+                                        Us Today</a></button></p>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container-fluid med-bg pt-5 pb-5">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="row">
+                <% services.forEach(function(card){ %>
+                <div class="service-card col-12 col-x-lg-4" id="card<%=card.id%>">
+                    <img src="img/<%=card.img%>.svg" class="card-img-top" alt="...">
+                    <h5 class="card-title"><%=card.header%></h5>
+                    <ul>
+                        <% card.list.forEach(function(item){ %>
+                        <li> <%= item %> </li>
+                        <% }) %>
+                    </ul>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why">
+    <div class="container-fluid light-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Why Choose Us?</h2>
+                    <p>With <strong>20 years</strong> experience around Rossendale, Burnley, Bury and Rochdale,
+                        <%= brand.name %>
+                        aims
+                        to deliver a <strong>professional</strong> and <strong>trustworthy</strong> service
+                        which
+                        focuses on
+                        <strong>customer</strong> service.</p>
+                    <p>But don't just take our word for it, check out our <strong>reviews:</strong></p>
+                </div>
+                <div class="col-12 review-image mt-5 mb-0 mb-lg-5">
+                    <hr class="d-none d-md-block">
+                    <img src="img/yelp-rating.png" class="img-fluid" alt="Rating from Which?">
+                    <hr class="d-none d-md-block">
+                    <img src="img/which-rating.png" class="img-fluid" alt="Rating from Which?">
+                    <hr class="d-none d-md-block">
+                    <img src="img/trustpilot-rating.png" class="img-fluid" alt="Rating from Trustpilot">
+                </div>
+                <div class="col-12 px-0">
+                    <div id="carouselReviews" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselReviews" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselReviews" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselReviews" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner style=" width:100%; height: 500px !important;">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Excellent Service</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">⭐⭐⭐⭐⭐</h6>
+                                        <p class="card-text"><%= brand.name %> are super awesome. Go get you some
+                                            <%= brand.name %>
+                                            right
+                                            now and have a happy life!</p>
+                                        <p class="card-text"><em>Mr. C. Ustomer</em></p>
+                                        <a href="#" class="card-link">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cool</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">⭐⭐⭐⭐⭐</h6>
+                                        <p class="card-text">Alright I guess</p><br class="d-block d-md-none">
+                                        <p class="card-text"><em>Miss H. Appy</em></p>
+                                        <a href="#" class="card-link">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Woooooooooooooooo!</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">⭐⭐⭐⭐⭐</h6>
+                                        <p class="card-text">Oh my god I can't believe how good they are. I
+                                            would <strong>literally kill</strong> to hire them again!</p>
+                                        <p class="card-text"><em>Mrs. Wu</em></p>
+                                        <a href="#" class="card-link">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselReviews"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselReviews"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="col-12">Contact Us</h2>
+                <p>We would love to hear from you, so please don't hesitate to contact us.</p>
+                <hr>
+                <div class="col-12 col-lg-6 mt-4">
+                    <div>
+                        <p class="mb-4"><a class="text-decoration-none" href="tel:01234-567-890"><img
+                                    src="img/icon-phone.png" alt="Phone Icon"><%= brand.phoneNumber %></a></p>
+                        <address>
+                            <p><a class="text-decoration-none mt-4" href="mailto:example@example.com"><img
+                                        src="img/icon-email.png" alt="Email Icon"> <%= brand.email %></a></p>
+                            <p class="d-inline">
+                                <img src="img/icon-address.png" alt="Address Icon" class="d-inline">
+
+                                <p class="address mt-4">
+                                    <%= brand.address.line1 %><br>
+                                    <%= brand.address.line2 %><br>
+                                    <%= brand.address.line3 %><br></p>
+
+                        </address>
+                    </div>
+                    </p>
+                    <p>
+                        <!-- <img class="map mt-0 mt-md-4" src="img/google-map.jpg" alt="Map of location" height="250px"> -->
+                        <iframe src="<%= brand.googleMapURL %>" allowfullscreen="" loading="lazy"
+                            class="mt-0 mt-sm-1"></iframe>
+                    </p>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <form action="/contact" method="POST">
+                        <fieldset class="justify-content-center" class="col-12 col-lg-6 name=" Customer Details"">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                            <label for="name">Email Address:</label>
+                            <input type="email" id="email" name="email">
+                            <label for="name">Phone No:</label>
+                            <input type="tel" id="phone" name="phone">
+                            <label for="name">Query Type:</label>
+                        </fieldset>
+                        <fieldset class="col-12 col-lg-6" name="Query"">
+                                <select id=" query-type" name="query-type" class="mx-auto ms-lg-0">
+                            <option value="quote-request">Quote Request</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="other">Other</option>
+                            </select>
+                            <label for="lname">Message:</label>
+                            <textarea id="message" name="message" rows="10"></textarea>
+                            <input type="submit" value="Submit" class="btn btn-success btn-lg mx-auto mx-lg-0">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="affiliations">
+    <div class="container-fluid light-bg pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-around">
+                <% affiliations.forEach(function(affl){ %>
+                    <img class="col-12 col-sm-6 col-md-6" src="img/<%=affl.img%>-logo.png" alt="<%=affl.name%> Logo">
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%- include("partials/footer"); -%>

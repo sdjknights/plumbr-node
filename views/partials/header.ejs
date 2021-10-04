@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= brand.name %></title>
+    <meta name="description" content="Rossendale-based plumber covering a variety of services">
+    <meta name="author" content="codeTree">
+
+    <meta property="og:title" content=<%= brand.name %>>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+    <meta property="og:description" content="Rossendale-based plumber covering a variety of services">
+    <meta property="og:image" content="image.png">
+
+    <link rel="icon" href="img/tap.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Khula&family=Orienta&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body id="body">
+    <!-- Body -->
+
+    <!-- Navbar -->
+    <section id="nav">
+        <div class="container-fluid dark-bg navbar-dark z-index-5000">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg" id="navbar">
+                    <a class="navbar-brand" href="/">
+                        <h1><%= brand.name %></h1>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#services">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#why">Why Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#contact">Contact</a>
+                            </li>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top -->
+    <div class="back-to-top" id="back-to-top">
+        <a href="#">Back to Top</a>
+    </div>
+
+    <!-- Main content -->
+    <main>
